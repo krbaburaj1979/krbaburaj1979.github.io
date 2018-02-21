@@ -1,0 +1,23 @@
+@CHARSET "ISO-8859-1";
+
+#mainBlockDiv {
+	text-align: left;
+	font-family: "Open Sans", sans-serif;
+}
+
+#logoDiv {
+	float: left;
+	padding-right: 10px;
+}
+
+#descriptionDiv {
+	background: #f9f8e6;
+	border: 1px solid grey;
+	padding-left: 10px;
+	height:200px;
+}
+
+#homeSocialMedia{
+	width: 100%;
+	background-color: grey;
+}
