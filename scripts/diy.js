@@ -4,6 +4,7 @@
 function loadPage(pageNumber){
 	pageNumber = pageNumber+".html";
 	$( "#mainContent" ).load( "html/"+pageNumber );
+	$('html, body').animate({ scrollTop: 0 }, 'fast');
 	
 }
 $('#pagination-demo').twbsPagination({
