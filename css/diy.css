@@ -1,10 +1,29 @@
 @CHARSET "ISO-8859-1";
-body{
-	width:100%;
-	margin:auto;
+
+body {
+	padding-top: 54px;
 }
+
+@media ( min-width : 992px) {
+	body {
+		padding-top: 56px;
+	}
+}
+
+.jumbotron-padding-override {
+     padding: 1em 1em 4em 1em!important; 
+}
+
+.lead-font-override {
+	font-size: 1.1em;
+}
+.pagination {
+	margin-bottom: 15px;
+}
+
 #logoDiv {
 	float: left;
+	padding: 5px 5px 5px 5px;
 }
 
 #descriptionDiv {
@@ -13,7 +32,3 @@ body{
 	padding-left: 10px;
 	width: 100%;
 }
-
-
-
-
