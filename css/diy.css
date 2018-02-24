@@ -26,9 +26,6 @@ body {
 	padding: 5px 5px 5px 5px;
 }
 
-#descriptionDiv {
-	background: #f9f8e6;
-	border: 1px solid grey;
-	padding-left: 10px;
-	width: 100%;
+.descriptionStyle {
+	font-size: 1.2em !important;
 }
