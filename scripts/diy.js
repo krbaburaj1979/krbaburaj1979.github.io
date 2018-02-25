@@ -22,7 +22,7 @@ $(window).scroll(
 
 function loadPage() {
 	$.ajax({
-		url : "view/" + index + ".html",
+		url : "./view/" + index + ".html",
 		type : "post",
 		success : function(data) {
 			$("#mainContent").append(data);
