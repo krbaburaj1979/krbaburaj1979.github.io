@@ -25,6 +25,7 @@ function loadPage() {
 		url : "./view/" + index + ".html",
 		type : "post",
 		dataType: "html",
+		contentType:"html",
 		success : function(data) {
 			$("#mainContent").append(data);
 		}
