@@ -17,9 +17,6 @@ body {
 .lead-font-override {
 	font-size: 1.1em;
 }
-.pagination {
-	margin-bottom: 15px;
-}
 
 #logoDiv {
 	float: left;
