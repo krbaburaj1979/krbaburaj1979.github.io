@@ -24,9 +24,6 @@ function loadPage() {
 	$.ajax({
 		url : "view/" + index + ".html",
 		type : "post",
-		beforeSend : function(xhr) {
-
-		},
 		success : function(data) {
 			$("#mainContent").append(data);
 		}
