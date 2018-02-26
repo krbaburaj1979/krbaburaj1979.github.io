@@ -40,3 +40,10 @@ function loadPage() {
 		scrollInAction = false;
 	}
 }
+
+function showAboutMe() {
+	$('#aboutMeModalId').modal();
+}
+function showContactMe() {
+	$('#contactModalId').modal();
+}

@@ -10,8 +10,9 @@ body {
 	}
 }
 
-.jumbotron-padding-override {
+.jumbotron-padding-margin-override {
      padding: 1em 1em 6em 1em!important; 
+     margin-top: 0.5rem!important;
 }
 
 .lead-font-override {
@@ -26,3 +27,4 @@ body {
 .descriptionStyle {
 	font-size: 1.2em !important;
 }
+
