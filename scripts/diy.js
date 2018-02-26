@@ -47,3 +47,16 @@ function showAboutMe() {
 function showContactMe() {
 	$('#contactModalId').modal();
 }
+
+function loadMe() {
+	alert(1);
+	$.ajax({
+		url : "./a.html",
+		type : "get",
+		dataType: "html",
+		contentType:"html",
+		success : function(data) {
+			$("#mainContent").append("babu");
+		}
+	});
+}
