@@ -1,4 +1,5 @@
 var scrollInAction = false;
+var scrollActionLock = false;
 var index = 1;
 var maxPage = 3;
 
@@ -21,26 +22,52 @@ $(window).scroll(
 		});
 
 function loadPage() {
-	$.ajax({
-		url : "./view/" + index + ".html",
-		type : "get",
-		dataType: "html",
-		contentType:"html",
-		success : function(data) {
-			$("#mainContent").append(data);
+	if(!scrollActionLock) {
+		$.ajax({
+			url : "./view/" + index + ".html",
+			type : "get",
+			dataType: "html",
+			contentType:"html",
+			success : function(data) {
+				$("#mainContent").append(data);
+			}
+		});
+	
+		index = index + 1;
+	
+		if (index > maxPage) 
+		{
+			scrollInAction = true;
+		} else {
+			scrollInAction = false;
 		}
-	});
-
-	index = index + 1;
-
-	if (index > maxPage) 
-	{
-		scrollInAction = true;
-	} else {
-		scrollInAction = false;
 	}
 }
+var getUrlParameter = function getUrlParameter(sParam) {
+    var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
 
+    for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+
+        if (sParameterName[0] === sParam) {
+            return sParameterName[1] === undefined ? true : sParameterName[1];
+        }
+    }
+};
+
+function loadSubPage() {
+	var subpage = getUrlParameter("subPage");
+	if(subpage) {
+		$('#mainContent').load("view/subpage/"+subpage+".html");
+		scrollActionLock = true;
+	}
+	else {
+		scrollActionLock = false;
+	}
+}
 function showAboutMe() {
 	$('#aboutMeModalId').modal();
 }
@@ -48,15 +75,3 @@ function showContactMe() {
 	$('#contactModalId').modal();
 }
 
-function loadMe() {
-	alert(1);
-	$.ajax({
-		url : "./a.html",
-		type : "get",
-		dataType: "html",
-		contentType:"html",
-		success : function(data) {
-			$("#mainContent").append("babu");
-		}
-	});
-}
