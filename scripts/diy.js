@@ -61,7 +61,9 @@ var getUrlParameter = function getUrlParameter(sParam) {
 function loadSubPage() {
 	var subpage = getUrlParameter("subPage");
 	if(subpage) {
+		var heading = getUrlParameter("heading");
 		$('#mainContent').load("view/subpage/"+subpage+".html");
+		$('#headingId').html(heading);
 		scrollActionLock = true;
 	}
 	else {

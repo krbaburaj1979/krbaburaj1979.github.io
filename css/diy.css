@@ -11,8 +11,8 @@ body {
 }
 
 .jumbotron-padding-margin-override {
-     padding: 1em 1em 6em 1em!important; 
-     margin-top: 0.5rem!important;
+	padding: 1em 1em 6em 1em !important;
+	margin-top: 0.5rem !important;
 }
 
 .lead-font-override {
@@ -28,3 +28,13 @@ body {
 	font-size: 1.2em !important;
 }
 
+#mainContentDescription {
+	border-style: solid;
+	border:1px;
+	border-radius: 25px;
+	padding: 20px;
+}
+.registrarDiv:hover{
+	background: red;
+	color: white;
+}
