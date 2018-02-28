@@ -64,6 +64,9 @@ function loadSubPage() {
 		var heading = getUrlParameter("heading");
 		$('#mainContent').load("view/subpage/"+subpage+".html");
 		$('#headingId').html(heading);
+		$('html, body').animate({
+	        scrollTop: $("#headingId").offset().top
+	    }, 1000);
 		scrollActionLock = true;
 	}
 	else {
