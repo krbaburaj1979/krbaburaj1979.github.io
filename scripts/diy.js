@@ -68,9 +68,11 @@ function loadSubPage() {
 	        scrollTop: $("#headingId").offset().top
 	    }, 1000);
 		scrollActionLock = true;
+		return true;
 	}
 	else {
 		scrollActionLock = false;
+		return false; 
 	}
 }
 function showAboutMe() {

@@ -79,7 +79,8 @@
 	<!-- Page Content -->
 	<div class="container-fluid">
 
-		<h4 id="headingId" class="my-4 card-header" style="text-align: center">Available Topics In This Page</h4>
+		<h4 id="headingId" class="my-4 card-header" style="text-align: center">Available
+			Topics In This Page</h4>
 
 		<div class="row">
 			<div class="col-md-10">
@@ -165,14 +166,16 @@
 	<script src="./scripts/diy.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function() {
-			loadPage();
+			if(!loadSubPage()){
+				loadPage();
+			}
 			$("html, body").animate({
 				scrollTop : 0
 			}, "slow");
 			$("#popularPosts").load("view/popularposts.html");
 			$("#aboutMe").load("view/aboutme.html");
 			$("#contactMe").load("view/contact.html");
-			loadSubPage();
+			
 		});
 	</script>
 </body>
