@@ -6,7 +6,7 @@ var maxPage = 3;
 $(window).scroll(
 		function() {
 			if ($(window).scrollTop() >= ($(document).height()
-					- $(window).height() - 600)) {
+					- $(window).height() - 1000)) {
 
 				if (scrollInAction) {
 					return false;
