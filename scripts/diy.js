@@ -68,6 +68,7 @@ function loadSubPage() {
 	        scrollTop: $("#headingId").offset().top
 	    }, 1000);
 		scrollActionLock = true;
+		$("#headingId").css( "background", "#FFF8DC" )
 		return true;
 	}
 	else {

@@ -41,3 +41,9 @@ body {
 .awithnounderline:hover{
 	text-decoration: none;
 }
+.popularPostLabel{
+	color: #055B9E;
+}
+.popularPostLabel:hover{
+	color: red;
+}
