@@ -166,16 +166,16 @@
 	<script src="./scripts/diy.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function() {
-			if(!loadSubPage()){
+			if (!loadSubPage()) {
 				loadPage();
+				$("html, body").animate({
+					scrollTop : 0
+				}, "slow");
 			}
-			$("html, body").animate({
-				scrollTop : 0
-			}, "slow");
 			$("#popularPosts").load("view/popularposts.html");
 			$("#aboutMe").load("view/aboutme.html");
 			$("#contactMe").load("view/contact.html");
-			
+
 		});
 	</script>
 </body>
