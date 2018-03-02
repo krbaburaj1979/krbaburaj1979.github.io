@@ -40,6 +40,7 @@ body {
 }
 .awithnounderline:hover{
 	text-decoration: none;
+	color:red;
 }
 .popularPostLabel{
 	color: #055B9E;
