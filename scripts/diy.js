@@ -3,8 +3,11 @@ var scrollActionLock = false;
 var index = 1;
 var maxPage = 3;
 
-$(window).scroll(
+/*$(window).scroll(
 		function() {
+			if(index==2) {
+				alert($(window).scrollTop() +"   "+$(document).height()+"        "+$(window).height());
+			}
 			if ($(window).scrollTop() >= ($(document).height()
 					- $(window).height() - 1000)) {
 
@@ -19,7 +22,7 @@ $(window).scroll(
 					// scrollInAction=false after ajax loading is completed.
 				}
 			}
-		});
+		});*/
 
 function loadPage() {
 	if(!scrollActionLock) {
@@ -68,7 +71,8 @@ function loadSubPage() {
 	        scrollTop: $("#headingId").offset().top
 	    }, 1000);
 		scrollActionLock = true;
-		$("#headingId").css( "background", "#FFF8DC" )
+		$("#headingId").css( "background", "#FFF8DC" );
+		$("#pagination").css("display","none");
 		return true;
 	}
 	else {

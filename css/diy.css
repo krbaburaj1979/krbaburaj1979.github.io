@@ -48,3 +48,11 @@ body {
 .popularPostLabel:hover{
 	color: red;
 }
+#pagination{
+	text-align: center;
+}
+#pagination ul a li{
+	width: 200px;
+	height: 200px;
+	text-align: center;
+}
