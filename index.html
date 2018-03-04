@@ -95,8 +95,10 @@
 		<div class="row">
 			<div class="col-md-10">
 				<!-- Project One -->
-				<div id="mainContent" style="display:none ;"></div>
-				<div id="pagination" style="text-align: center;"></div>
+				<div id="mainContent" style="display: none;"></div>
+				<div id="outer" style="width: 100%">
+					<div id="pagination"></div>
+				</div>
 			</div>
 			<div class="col-md-2">
 
@@ -210,7 +212,7 @@
 				$("#pagination").pagination({
 					items : numItems,
 					itemsOnPage : perPage,
-					cssStyle : "dark-theme",
+					cssStyle : "light-theme",
 
 					// This is the actual page changing functionality.
 					onPageClick : function(pageNumber) {
@@ -228,9 +230,8 @@
 					}
 				});
 			});
-			$("#mainContent").css("display","block");
+			$("#mainContent").css("display", "block");
 		});
-		
 	</script>
 </body>
 
