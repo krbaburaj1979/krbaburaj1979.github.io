@@ -33,6 +33,7 @@
 </head>
 
 <body>
+
 	<div id="fb-root"></div>
 	<script>
 		(function(d, s, id) {
@@ -87,11 +88,14 @@
 
 	<!-- Page Content -->
 	<div class="container-fluid">
-
+		<div id="wait"
+			style="display: none; width: 69px; height: 89px;  position: fixed; top: 50%; left: 50%; padding: 2px;">
+			<img src='images/demo_wait.gif' width="64" height="64" /><br>Loading..
+		</div>
 		<h4 id="headingId" class="my-4 card-header" style="text-align: center">Available
 			Topics In This Page</h4>
 		<div id="subPageDateContainer" class="col-md-12"
-			style="color: magenta; padding-bottom: 15px; text-align: center; "></div>
+			style="color: magenta; padding-bottom: 15px; text-align: center;"></div>
 		<div class="row">
 			<div class="col-md-10">
 				<!-- Project One -->
@@ -187,6 +191,7 @@
 	<script src="./scripts/diy.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function() {
+
 			if (!loadSubPage()) {
 				loadPage();
 				$("html, body").animate({
@@ -231,6 +236,7 @@
 				});
 			});
 			$("#mainContent").css("display", "block");
+			$("#wait").css("display", "none");
 		});
 	</script>
 </body>
