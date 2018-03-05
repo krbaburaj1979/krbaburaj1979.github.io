@@ -65,8 +65,11 @@ function loadSubPage() {
 	var subpage = getUrlParameter("subPage");
 	if(subpage) {
 		var heading = getUrlParameter("heading");
+		var date = getUrlParameter("date");
 		$('#mainContent').load("view/subpage/"+subpage+".html");
 		$('#headingId').html(heading);
+		
+		$('#subPageDateContainer').html(date);
 		$('html, body').animate({
 	        scrollTop: $("#headingId").offset().top
 	    }, 1000);
