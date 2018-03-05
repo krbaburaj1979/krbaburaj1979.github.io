@@ -89,7 +89,7 @@
 	<!-- Page Content -->
 	<div class="container-fluid">
 		<div id="wait"
-			style="display: none; width: 69px; height: 89px;  position: fixed; top: 50%; left: 50%; padding: 2px;">
+			style="display: none; width: 69px; height: 89px; position: fixed; top: 50%; left: 50%; padding: 2px;">
 			<img src='images/demo_wait.gif' width="64" height="64" /><br>Loading..
 		</div>
 		<h4 id="headingId" class="my-4 card-header" style="text-align: center">Available
@@ -190,13 +190,11 @@
 
 	<script src="./scripts/diy.js"></script>
 	<script type="text/javascript">
+		var scrollFlag = false;
 		$(document).ready(function() {
-
-			if (!loadSubPage()) {
+			scrollFlag = loadSubPage();
+			if (!scrollFlag) {
 				loadPage();
-				$("html, body").animate({
-					scrollTop : 0
-				}, "slow");
 			}
 			$("#popularPosts").load("view/popularposts.html");
 			$("#aboutMe").load("view/aboutme.html");
@@ -236,6 +234,11 @@
 				});
 			});
 			$("#mainContent").css("display", "block");
+			if (!scrollFlag) {
+				$("html, body").animate({
+					scrollTop : 0
+				}, "slow");
+			}
 			$("#wait").css("display", "none");
 		});
 	</script>
