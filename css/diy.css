@@ -56,3 +56,7 @@ body {
 .mt-4, .my-4 {
 	margin-top: 0em !important;
 }
+.img-relatedposts {
+	width:500px !important;
+	height: 300px !important;
+}
