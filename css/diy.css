@@ -64,11 +64,11 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	font-size: 24px;
+	
 }
 .page-link {
-	padding-left: 15px !important;
-	padding-right: 15px !important;
+	padding-left: 14px !important;
+	padding-right: 14px !important;
 }
 
 .mt-4, .my-4 {
