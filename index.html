@@ -97,7 +97,8 @@
 				<div id="mainContent" style="display: block;"></div>
 				<div class="row">
 					<div class="col-md-12">
-						<div id="paginationContainer" class="container" style="margin-top: 15px ;font-size: 20px;">
+						<div id="paginationContainer" class="container"
+							style="margin-top: 15px; font-size: 20px;">
 							<div id="pagination" class="pagination" style="display: none;"></div>
 						</div>
 
@@ -188,6 +189,10 @@
 				window.pagObj = $('#pagination').twbsPagination({
 					totalPages : 3,
 					visiblePages : 3,
+					first : "<<",
+					prev : "<",
+					next:">",
+					last : ">>",
 					onPageClick : function(event, page) {
 						if (!subPageFlag) {
 							loadPage(page);
