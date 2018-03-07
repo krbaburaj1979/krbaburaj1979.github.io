@@ -1,16 +1,19 @@
-function loadPage() {
-	$("#wait").css("display", "block");
-
+function loadPage(page) {
 	$.ajax({
-		url : "./view/" + 1 + ".html",
+		url : "./view/" + page + ".html",
 		type : "get",
 		dataType : "html",
 		contentType : "html",
 		complete : function(data) {
-
+			$("html, body").animate({
+				scrollTop : 0
+			}, "slow");
+			$("#wait").css("display", "none");
 		},
 		success : function(data) {
-			$("#mainContent").append(data);
+			$("#mainContent").html(data);
+			$("#pagination").css("display", "block");
+			
 		}
 
 	});
@@ -41,16 +44,18 @@ function loadSubPage() {
 			dataType : "html",
 			contentType : "html",
 			complete : function(data) {
-
+				
+				$('html, body').animate({
+					scrollTop : $("#headingId").offset().top
+				}, 1000);
+				$("#wait").css("display", "none");
 			},
 			success : function(data) {
 				$("#mainContent").append(data);
 				$('#headingId').html(heading);
 
 				$('#subPageDateContainer').html(date);
-				$('html, body').animate({
-					scrollTop : $("#headingId").offset().top
-				}, 1000);
+				
 				$("#headingId").css("background", "#FFF8DC");
 				$("#pagination").css("display", "none");
 			}

@@ -22,7 +22,6 @@
 
 <script src="https://apis.google.com/js/platform.js"></script>
 
-
 </head>
 
 <body>
@@ -85,7 +84,7 @@
 	<!-- Page Content -->
 	<div class="container-fluid">
 		<div id="wait"
-			style="display: none; width: 69px; height: 89px; position: fixed; top: 50%; left: 50%; padding: 2px;">
+			style="display: block; width: 69px; height: 89px; position: fixed; top: 50%; left: 50%; padding: 2px;">
 			<img src='images/demo_wait.gif' width="64" height="64" /><br>Loading..
 		</div>
 		<h4 id="headingId" class="my-4 card-header" style="text-align: center">Available
@@ -95,9 +94,14 @@
 		<div class="row">
 			<div class="col-md-10">
 				<!-- Project One -->
-				<div id="mainContent" style="display: none;"></div>
-				<div id="outer" style="width: 100%">
-					<div id="pagination"></div>
+				<div id="mainContent" style="display: block;"></div>
+				<div class="row">
+					<div class="col-md-12">
+						<div class="container" style="margin-top: 15px ">
+							<div id="pagination" class="pagination" style="display: none;"></div>
+						</div>
+
+					</div>
 				</div>
 			</div>
 			<div class="col-md-2">
@@ -154,8 +158,6 @@
 		<div id="contactMe"></div>
 
 	</div>
-	
-	<!-- /.container -->
 
 	<!-- Footer -->
 	<footer class="py-5 bg-dark">
@@ -172,63 +174,39 @@
 	<script src="./scripts/jquery/jquery-3.3.1.min.js"></script>
 	<script src="./scripts/jquery/jquery-ui.min.js"></script>
 	<script src="./scripts/bootstrap/js/bootstrap.min.js"></script>
-	<script src="./scripts/jquery/jquery.simplePagination.js"></script>
-		<script src="./scripts/jquery/jquery-easyframe.js"></script>
+	<script src="./scripts/jquery/jquery-easyframe.js"></script>
+	<script src="./scripts/jquery/jquery.twbsPagination.min.js"
+		type="text/javascript"></script>
 
 	<script src="./scripts/diy.js"></script>
 	<script type="text/javascript">
-		var scrollFlag = false;
+		var subPageFlag = false;
 		$(document).ready(function() {
-			scrollFlag = loadSubPage();
-			if (!scrollFlag) {
-				loadPage();
-			}
+			subPageFlag = loadSubPage();
+
+			$(function() {
+				window.pagObj = $('#pagination').twbsPagination({
+					totalPages : 3,
+					visiblePages : 3,
+					onPageClick : function(event, page) {
+						if (!subPageFlag) {
+							loadPage(page);
+						}
+					}
+				});
+			});
 			$("#popularPosts").load("view/popularposts.html");
 			$("#aboutMe").load("view/aboutme.html");
 			$("#contactMe").load("view/contact.html");
 
 		});
 		$(window).on('load', function() {
-			jQuery(function($) {
-				var items = $("#mainContent .paginateMe");
 
-				var numItems = items.length;
-				var perPage = 8;
-
-				// Only show the first 2 (or first `per_page`) items initially.
-				items.slice(perPage).hide();
-
-				// Now setup the pagination using the `#pagination` div.
-				$("#pagination").pagination({
-					items : numItems,
-					itemsOnPage : perPage,
-					cssStyle : "light-theme",
-
-					// This is the actual page changing functionality.
-					onPageClick : function(pageNumber) {
-						// We need to show and hide `tr`s appropriately.
-						var showFrom = perPage * (pageNumber - 1);
-						var showTo = showFrom + perPage;
-
-						// We'll first hide everything...
-						items.hide()
-						// ... and then only show the appropriate rows.
-						.slice(showFrom, showTo).show();
-						$("html, body").animate({
-							scrollTop : 0
-						}, "slow");
-					}
-				});
-			});
-			$("#mainContent").css("display", "block");
-			if (!scrollFlag) {
-				$("html, body").animate({
-					scrollTop : 0
-				}, "slow");
-			}
 			$("#wait").css("display", "none");
+
 		});
 	</script>
+
 </body>
 
 </html>

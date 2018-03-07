@@ -7,6 +7,7 @@ body {
 @media ( min-width : 992px) {
 	body {
 		padding-top: 56px;
+		height: 100%;
 	}
 }
 
@@ -30,43 +31,63 @@ body {
 
 #mainContentDescription {
 	border-style: solid;
-	border:1px;
+	border: 1px;
 	border-radius: 25px;
 	padding: 20px;
 }
-.registrarDiv:hover{
+
+.registrarDiv:hover {
 	background: red;
 	color: white;
 }
-.awithnounderline:hover{
+
+.awithnounderline:hover {
 	text-decoration: none;
-	color:red;
-}
-.popularPostLabel{
-	color: #055B9E;
-}
-.popularPostLabel:hover{
 	color: red;
 }
+
+.popularPostLabel {
+	color: #055B9E;
+}
+
+.popularPostLabel:hover {
+	color: red;
+}
+
 #pagination {
-  display: table;
-  margin: 0 auto;
+	margin: 0 auto;
+	text-align: center;
+	
+}
+.container {
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 27px;
+}
+.page-link {
+	padding-left: 20px !important;
+	padding-right: 20px !important;
 }
 
 .mt-4, .my-4 {
 	margin-top: 0em !important;
 }
+
 .img-relatedposts {
-	width:500px !important;
+	width: 500px !important;
 	height: 300px !important;
 }
-.knowMore{
+
+.knowMore {
 	color: green;
 }
+
 .advertisingContainer {
 	
 }
+
 .buyUsingLink {
 	color: orange;
-	
 }
