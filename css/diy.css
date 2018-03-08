@@ -1,3 +1,4 @@
+
 @CHARSET "ISO-8859-1";
 
 body {
@@ -81,8 +82,7 @@ body {
 }
 
 .knowMore {
-	color: green;
-	animation: blink 1s infinite;
+	color: #13a30f;
 }
 
 .advertisingContainer {
@@ -92,13 +92,37 @@ body {
 .buyUsingLink {
 	color: orange;
 }
-
-.blink {
-	
+.blink_me {
+    -webkit-animation-name: blinker;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-timing-function: cubic-bezier(0.4, 0, 1, 1);
+    -webkit-animation-iteration-count: infinite;
+    
+    -moz-animation-name: blinker;
+    -moz-animation-duration: 1s;
+    -moz-animation-timing-function: cubic-bezier(0.4, 0, 1, 1);
+    -moz-animation-iteration-count: infinite;
+    
+    animation-name: blinker;
+    animation-duration: 1s;
+    animation-timing-function: cubic-bezier(0.4, 0, 1, 1);
+    animation-iteration-count: infinite;
 }
- @keyframes blink{
-		0%{opacity: 1;}
-		75%{opacity: 1;}
-		76%{ opacity: 0;}
-		100%{opacity: 0;}
-	 }
+
+@-moz-keyframes blinker {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
+@-webkit-keyframes blinker {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
+@keyframes blinker {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
