@@ -57,15 +57,15 @@ body {
 #pagination {
 	margin: 0 auto;
 	text-align: center;
-	
 }
+
 .container {
 	height: 100%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	
 }
+
 .page-link {
 	padding-left: 14px !important;
 	padding-right: 14px !important;
@@ -82,6 +82,7 @@ body {
 
 .knowMore {
 	color: green;
+	animation: blink 1s infinite;
 }
 
 .advertisingContainer {
@@ -91,3 +92,13 @@ body {
 .buyUsingLink {
 	color: orange;
 }
+
+.blink {
+	
+}
+ @keyframes blink{
+		0%{opacity: 1;}
+		75%{opacity: 1;}
+		76%{ opacity: 0;}
+		100%{opacity: 0;}
+	 }
