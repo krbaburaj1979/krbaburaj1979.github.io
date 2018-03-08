@@ -158,6 +158,10 @@
 					<h5 class="card-header">Popular Posts</h5>
 					<div class="card-body" id="popularPosts"></div>
 				</div>
+				<div class="card my-4">
+					<h5 class="card-header">You may like</h5>
+					<div class="card-body" id="randomContainer"></div>
+				</div>
 			</div>
 		</div>
 		<!-- </div> -->
@@ -212,6 +216,7 @@
 			$("#popularPosts").load("view/popularposts.html");
 			$("#aboutMe").load("view/aboutme.html");
 			$("#contactMe").load("view/contact.html");
+			$("#randomContainer").load("view/random.html");
 
 		});
 		$(window).on('load', function() {
