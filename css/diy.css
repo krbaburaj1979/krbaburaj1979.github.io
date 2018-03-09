@@ -29,7 +29,21 @@ body {
 .descriptionStyle {
 	font-size: 1.2em !important;
 }
-
+.mainDescription{
+	background-color: #F8F8E6;
+	padding: 20px 20px 20px 20px;
+	border-radius: 25px;
+	border:2px solid green;
+}
+.secondaryDescription{
+	margin-top:10px;
+	padding: 20px 20px 20px 20px;
+	border-radius: 25px;
+	border:2px solid green;
+}
+.mainImage{
+	margin-top: 37px;
+}
 #mainContentDescription {
 	border-style: solid;
 	border: 1px;
@@ -82,7 +96,8 @@ body {
 }
 
 .knowMore {
-	color: #13a30f;
+	color: rgb(0,0, 255);
+	font-weight: bold;
 }
 
 .advertisingContainer {
