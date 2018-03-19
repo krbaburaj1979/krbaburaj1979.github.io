@@ -13,7 +13,7 @@ function loadPage(page) {
 		success : function(data) {
 			$("#mainContent").html(data);
 			$("#pagination").css("display", "block");
-			
+
 		}
 
 	});
@@ -38,29 +38,32 @@ function loadSubPage() {
 		var heading = getUrlParameter("heading");
 		var date = getUrlParameter("date");
 
-		$.ajax({
-			url : "view/subpage/" + subpage + ".html",
-			type : "get",
-			dataType : "html",
-			contentType : "html",
-			complete : function(data) {
-				
-				$('html, body').animate({
-					scrollTop : $("#headingId").offset().top
-				}, 1000);
-				$("#wait").css("display", "none");
-			},
-			success : function(data) {
-				$("#mainContent").append(data);
-				$('#headingId').html(heading);
+		$
+				.ajax({
+					url : "view/subpage/" + subpage + ".html",
+					type : "get",
+					dataType : "html",
+					contentType : "html",
+					complete : function(data) {
 
-				$('#subPageDateContainer').html(date);
-				
-				$("#headingId").css("background", "#FFF8DC");
-				$("#pagination").css("display", "none");
-			}
+						$('html, body').animate({
+							scrollTop : $("#headingId").offset().top
+						}, 1000);
+						$("#wait").css("display", "none");
+					},
+					success : function(data) {
+						$("#mainContent").append(data);
+						$('#headingId').html(heading);
 
-		});
+						$('#subPageDateContainer').html(date);
+
+						$("#headingId").css("background", "#FFF8DC");
+						$("#pagination").css("display", "none");
+						$("#recommendationContainer").load(
+								"view/recommendations.html");
+					}
+
+				});
 
 		return true;
 	} else {
